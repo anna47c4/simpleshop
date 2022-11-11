@@ -24,12 +24,15 @@
 }
 .ProductList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
-  .Product {
-    background-color: rgb(32, 32, 32);
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 1rem;
+}
+.Product {
+  h2 {
+    height: 30px;
+    overflow: hidden; //not legal
   }
 }
-
 .Basket {
   background-color: rgb(32, 32, 32);
 }
