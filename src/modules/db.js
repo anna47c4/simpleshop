@@ -1,8 +1,8 @@
-export function insertOrder(payload) {
+export async function insertOrder(payload) {
   const key =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6cHhuaGFqdnpnbmpjemJyYW1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgxNjQ2MzgsImV4cCI6MTk4Mzc0MDYzOH0.rjVniPxUs5ZxxbmHY22Hn6-hPRdE2xG_vhLtLGShTQs";
   const url = "https://hzpxnhajvzgnjczbramp.supabase.co";
-  fetch(url + "/rest/v1/simple-shop", {
+  const res = await fetch(url + "/rest/v1/simple-shop", {
     method: "POST",
     headers: {
       apikey:
@@ -12,9 +12,8 @@ export function insertOrder(payload) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
-  })
-    .then()
-    .then();
+  });
+  return await res.json();
 }
 
 /*
